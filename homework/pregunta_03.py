@@ -21,3 +21,13 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    import pandas as pd
+
+    #Lectura archivo
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t",)
+    
+    #Conteo y ordenamiento de letras 
+    conteo = df['c1'].value_counts().sort_index()
+
+    return conteo
+print(pregunta_03())
